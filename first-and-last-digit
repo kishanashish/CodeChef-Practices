@@ -1,0 +1,42 @@
+
+/*Question:
+If Give an integer N . Write a program to obtain the sum of the first and last digits of this number/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		
+		int T=0, num=0, sum=0, d=0, r=0;
+		
+		T=sc.nextInt();
+		int []N=new int[T];
+		if(T>=1 && T<=1000){
+		    for(int i=0; i<T; i++){
+		        N[i]=sc.nextInt();
+		    }
+		}
+		for(int j=0; j<T; j++){
+		    num=N[j];
+		    int first=N[j];
+		    
+		    while(num>0){
+		        r=num%10;
+		        d=r+(d*10);
+		        num=num/10;  
+		    }
+		    sum=(first%10)+(d%10);
+		    System.out.println(sum);
+		    num=0;sum=0;d=0;
+		    
+		}
+		
+	}
+}
